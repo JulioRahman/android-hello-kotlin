@@ -1,6 +1,7 @@
 package com.julio.hellokotlin
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,7 +18,10 @@ class MainActivity : AppCompatActivity() {
         initData()
 
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = RecyclerViewAdapter(this, items)
+        list.adapter = RecyclerViewAdapter(this, items) {
+            Toast.makeText(applicationContext, it.name, Toast.LENGTH_SHORT)
+                .show()
+        }
     }
 
     private fun initData() {

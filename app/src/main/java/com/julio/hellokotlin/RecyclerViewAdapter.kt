@@ -8,7 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_list.view.*
 
-class RecyclerViewAdapter(private val context: Context, private val items: List<Item>) :
+class RecyclerViewAdapter(
+    private val context: Context,
+    private val items: List<Item>,
+    private val listener: (Item) -> Unit
+) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
@@ -17,7 +21,7 @@ class RecyclerViewAdapter(private val context: Context, private val items: List<
     override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItem(items[position])
+        holder.bindItem(items[position], listener)
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -25,10 +29,13 @@ class RecyclerViewAdapter(private val context: Context, private val items: List<
         private val name = view.name
         private val image = view.image
 
-        fun bindItem(item: Item) {
+        fun bindItem(item: Item, listener: (Item) -> Unit) {
             name.text = item.name
             item.image.let {
                 Picasso.get().load(it).fit().into(image)
+            }
+            itemView.setOnClickListener {
+                listener(item)
             }
         }
     }
