@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">Hello Kotlin</string>
+
+    <string-array name="team_name">
+        <item>Atlanta Hawks</item>
+        <item>Boston Celtics</item>
+        <item>Brooklyn Nets</item>
+        <item>Charlotte Hornets</item>
+        <item>Chicago Bulls</item>
+        <item>Cleveland Cavaliers</item>
+        <item>Dallas Mavericks</item>
+        <item>Denver Nuggets</item>
+        <item>Detroit Pistons</item>
+        <item>Golden State Warriors</item>
+    </string-array>
+
+    <string name="team_badge_base">https://www.thesportsdb.com/images/media/team/badge/</string>
+
+    <string-array name="team_bagde">
+        <item>cfcn1w1503741986.png</item>
+        <item>051sjd1537102179.png</item>
+        <item>9l5b1n1547642059.png</item>
+        <item>xqtvvp1422380623.png</item>
+        <item>yk7swg1547214677.png</item>
+        <item>a2pp4c1503741152.png</item>
+        <item>yqrxrs1420568796.png</item>
+        <item>8o8j5k1546016274.png</item>
+        <item>12612u1511101660.png</item>
+        <item>irobi61565197527.png</item>
+    </string-array>
 </resources>
